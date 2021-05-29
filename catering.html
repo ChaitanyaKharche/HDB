@@ -27,10 +27,12 @@
 
             <!-- Navigation -->
             <ul class="menu-list">
-                <li class=""><a href="index.html#banner">Home</a></li>
-                <li><a href="index.html#about">About </a></li>
+                <li class="">
+                    <a href="index.html#banner" onclick="toggleClick()">Home</a>
+                </li>
+                <li><a href="index.html#about" onclick="toggleClick()">About </a></li>
                 <li class="nav-itemd">
-                    <a href="index.html#menu"><button class="bg-transparent border-0 menu" id="dbutton">
+                    <a href="index.html#menu" onclick="toggleClick()"><button class="bg-transparent border-0 menu" id="dbutton">
                 MENU
               </button>
               <div class="dropdown-content">
@@ -42,12 +44,21 @@
                     </div>
                     </a>
                 </li>
-                <li class="active"><a href="#catering.html">CATERING</a></li>
-                <li><a href="index.html#testimonial">TESTIMONIALS</a></li>
-                <li>
-                    <a href="https://us.orderspoon.com/chain/hdb">ORDER ONLINE</a>
+                <li class="active">
+                    <a href="#catering.html" onclick="toggleClick()">CATERING</a>
                 </li>
-                <a class="button" href="#foot">CONTACT US</a>
+                <li>
+                    <a href="index.html#testimonial" onclick="toggleClick()">TESTIMONIALS</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://us.orderspoon.com/chain/hdb"
+              onclick="toggleClick()"
+              >ORDER ONLINE</a
+            >
+          </li>
+          <a class="button" href="#foot" onclick="toggleClick()">CONTACT US</a>
             </ul>
 
             <div class="humbarger">
@@ -426,20 +437,19 @@
         </p>
     </section>
     <script>
-        $(document).ready(function() {
-            //hamburger Toggle
-            $(".humbarger").click(function(event) {
-                $(".menu-list").slideToggle(500);
-                event.preventDefault();
+        var menuList = document.getElementById("menuLI");
+        var open = false;
 
-                $(".menu-list li a").click(function(event) {
-                    if ($(window).width() < 768) {
-                        $(".menu-list").slideUp(500);
-                        event.preventDefault();
-                    }
-                });
-            });
-        });
+        function toggleClick() {
+            console.log("helllo");
+            if (open == false) {
+                menuList.style.right = "0";
+                open = true;
+            } else {
+                menuList.style.right = "-100%";
+                open = false;
+            }
+        }
     </script>
     <!-- <script>
         var myNav = document.getElementsByClassName("navbar")[0];
