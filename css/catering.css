@@ -192,14 +192,16 @@ Responsive Section
 @media only screen and (max-width: 767px) {
     header .navigation .menu-list {
         position: absolute;
-        top: 12vh;
+        top: 92px;
+        right: -100%;
         min-width: 100%;
         margin: 0;
         padding: 0;
         background: orange;
         text-align: center;
-        display: none;
+        display: block;
         font-weight: 500;
+        transition: right 0.3s ease-in-out;
     }
     header .navigation .menu-list li {
         display: block;
